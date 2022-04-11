@@ -6,8 +6,11 @@ jobs:
   steps:
    - name: Recup du repo
      uses: actions/checkout@v3
-   - name: Afficher le contenu de mon job
+   - name: test 1
      run: exit 1
+   - name: test 2
+     if: {{ always() }}
+     run: echo "test 2"
    - name: Envoi mail
      if: ${{ failure() }}
      run: echo "Envoi mail si le test echoue"
