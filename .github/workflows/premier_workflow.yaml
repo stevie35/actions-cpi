@@ -7,10 +7,10 @@ jobs:
    - name: Recup du repo
      uses: actions/checkout@v3
    - name: Afficher le contenu de mon job
-     run: ls
+     run: exit 1
    - name: Envoi mail
      if: ${{ failure() }}
-     run: echo "Envoi mail"
+     run: echo "Envoi mail si le test echoue"
 #  Build:
 #   needs: [MonPremierJob] 
 #   runs-on: ubuntu-latest
