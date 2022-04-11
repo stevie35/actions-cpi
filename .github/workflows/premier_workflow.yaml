@@ -1,14 +1,21 @@
 name: Toto
+<<<<<<< HEAD
 on: [pull_request]
 #  pull_request:
 #   branches:
 #    - "dev";
+=======
+on: 
+  pull_request:
+    branches:
+      - "main"
+>>>>>>> main
 jobs: 
- Test:
-  runs-on: ubuntu-latest
-  steps:
-   - name: Test 1
-     run: echo "juju"
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test 1
+        run: echo "juji"
 
      
 #  Create-issue:
