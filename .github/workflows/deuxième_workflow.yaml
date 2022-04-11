@@ -1,6 +1,6 @@
 name: deuxieme
 on: 
-  worklow_run:
+  workflow_run:
     workflows:
       - "Toto"
     types: 
