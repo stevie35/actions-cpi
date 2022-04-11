@@ -8,7 +8,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Test 1
-     run: echo "juju"
+     run: echo "juji"
 
      
 #  Create-issue:
