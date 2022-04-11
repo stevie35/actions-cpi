@@ -1,14 +1,11 @@
 name: Toto
 on: [pull_request]
-#  pull_request:
-#   branches:
-#    - "dev";
 jobs: 
  Test:
   runs-on: ubuntu-latest
   steps:
    - name: Test 1
-     run: echo "juju"
+     run: echo "juji"
 
      
 #  Create-issue:
