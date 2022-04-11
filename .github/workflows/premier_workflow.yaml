@@ -9,7 +9,7 @@ jobs:
    - name: test 1
      run: exit 1
    - name: test 2
-     if: {{ always() }}
+     if: ${{ always() }}
      run: echo "test 2"
    - name: Envoi mail
      if: ${{ failure() }}
