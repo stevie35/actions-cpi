@@ -20,11 +20,11 @@ jobs:
    needs: [Test, Build]
    runs-on: ubuntu-latest
    #if: ${{ always() }}
-   if: always() && (needs.Test.result == "failure" || needs.Build.result == "failure")
+   if: always() && (needs.Test.result == 'failure' || needs.Build.result == 'failure')
    steps:
     - name: "Mail"
       run: echo "mail"
-      
+
 
 
   #  - name: Envoi mail
