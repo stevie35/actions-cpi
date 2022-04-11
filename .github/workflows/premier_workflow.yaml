@@ -6,9 +6,14 @@ jobs:
   steps:
    - name: Recup du repo
      uses: actions/checkout@v3
-     with:
-      ref: "refs/tags/1.0.0"
    - name: Afficher le contenu de mon job
      run: ls
+ Build:
+  needs: [MonPremierJob] 
+  runs-on: ubuntu-latest
+  steps:
+   - name: build de l'app
+     run: echo "Je build"
+
 
 
