@@ -4,14 +4,23 @@ jobs:
  Test:
   runs-on: ubuntu-latest
   steps:
-   - name: Github
-     run: echo '${{ toJson(github) }}'
-   - name: job
-     run: echo '${{ toJson(job) }}'
-   - name: steps
-     run: echo '${{ toJson(steps) }}'
-   - name: Runner
-     run: echo '${{ toJson(runner) }}'
+   - name: Test 1
+     run: exit 1
+ Create-issue:
+  needs: [Test]
+  runs-on: ubuntu-latest
+  if: always() && (needs.Test.result == 'failure')
+  steps: 
+   - name: create issue
+     uses: actions-ecosystem/action-create-issue@v1
+     with:
+      github_token: ${{ secrets.GITHUB_TOKEN }} 
+      title: Problème lors du test
+      body: |
+       ## A faire
+       Tout a pété
+   - name: afficher secrets
+     run: echo ${{ secrets.MANAGE_TOKEN }}
 
 
 
